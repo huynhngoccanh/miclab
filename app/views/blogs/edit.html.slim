@@ -1,0 +1,12 @@
+    h1 Edit Blog
+    = form_for :new_blog, :url => blog_path, method: :patch do |f|
+      = f.label :"Title"
+      = f.text_field :title, placeholder: @edit_blog.title
+      br
+      = f.label :"content"
+      = f.text_field :content, placeholder: @edit_blog.content
+      br
+      = f.label :"category"
+      = f.select( :category_id, Category.all.collect {|category| [category.name, category.id]})
+      br
+      = f.submit :Luu

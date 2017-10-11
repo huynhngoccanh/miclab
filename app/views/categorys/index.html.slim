@@ -1,0 +1,29 @@
+
+h1 List Category
+= link_to 'New category', new_category_path 
+
+div.fluid_container
+  div.container.main
+   .row
+    .col-md-4
+      h3 Stt
+    .col-sm-4
+      h3 The loai
+    .col-sm-4
+      h3 Congcu
+  - @categories.each do |category|  
+   .row
+    .col-md-4
+      h3 #
+    .col-sm-4
+      h3 = category.name
+    .col-sm-4
+      h3
+      = link_to 'show', category_path(category)
+      span |
+      = link_to 'edit', edit_category_path(category)
+      span |
+      = link_to 'Destroy', category_path(category),
+              method: :delete,
+              data: { confirm: 'Are you sure?' }
+  = will_paginate @categories 

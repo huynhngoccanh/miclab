@@ -1,0 +1,6 @@
+    h1 Edit Category
+    = form_for :new_category, url: category_path, method: :patch do |f|
+      = f.label :"Name Category"
+      = f.text_field :name
+      = f.submit :Luu
+    = link_to 'Back', categorys_path 

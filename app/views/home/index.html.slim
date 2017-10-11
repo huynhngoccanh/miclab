@@ -1,0 +1,11 @@
+
+ div.fluid_container
+  div.container.main
+    - @all_blogs.each do |blog| 
+      .row
+        .col-sm-9
+          h1 = blog.title
+          img src="http://kenh14.vn/mat-hinh-anh-vi-mai-ngo-pham-huong-lai-ghi-diem-khi-chinh-giay-cho-thi-sinh-20171010162344242.chn"
+          h4 = blog.content
+
+   
